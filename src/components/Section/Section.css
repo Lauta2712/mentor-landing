@@ -9,17 +9,6 @@
   display: grid;
   align-items: center;
 }
-.section-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 0.35) 0%,
-    rgba(0, 0, 0, 0.05) 55%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
 
 .section-body {
   background: #fff;
@@ -30,9 +19,9 @@
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(11rem, auto)); 
   gap: clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2.25rem);
-  justify-items: center;
+  justify-content: start; 
 }
 
 @media (max-width: 56.25rem) { 

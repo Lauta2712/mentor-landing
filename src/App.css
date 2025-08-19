@@ -31,7 +31,6 @@
 html, body, #root { height: 100%; }
 body { 
   margin: 0; 
-  /* font-family: "Montserrat", "Poppins", system-ui, -apple-system, Arial, sans-serif;  */
   font-family: "Nunito", system-ui, -apple-system, Arial, sans-serif; 
   color: var(--text); 
 }
