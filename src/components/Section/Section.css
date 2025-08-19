@@ -1,0 +1,45 @@
+.section {
+  background: #fff;
+}
+
+.section-hero {
+  position: relative;
+  width: 100%;
+  height: clamp(200px, 30vw, 340px); 
+  display: grid;
+  align-items: center;
+}
+.section-hero::after {
+  content:"";
+  position:absolute; inset:0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 55%, rgba(0,0,0,0) 100%);
+}
+
+.section-body {
+  background: #fff;
+  padding: clamp(18px, 4vw, 44px) clamp(12px, 5vw, 64px);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: clamp(14px, 2vw, 24px) clamp(18px, 3vw, 36px);
+  justify-items: center;
+}
+
+@media (max-width: 1000px) {
+  .buttons {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 16px 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .buttons {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .section-body {
+    padding: 16px; 
+  }
+}

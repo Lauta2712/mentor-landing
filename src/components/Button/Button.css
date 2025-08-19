@@ -1,0 +1,66 @@
+.btn {
+  display: inline-flex;
+  align-items: stretch; /* Importante: que ambos hijos se estiren a la misma altura */
+  justify-content: center;
+  border-radius: 9999px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
+  min-width: 260px;
+  overflow: hidden; /* Para que el borde pill quede limpio */
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0,0,0,.2);
+}
+
+/* Ambos lados ocupan el 50% */
+.btn__left,
+.btn__right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  font-size: 0.85rem;
+  font-weight: 900;
+  padding: 0.75rem 1rem; /* padding igual para ambos */
+}
+
+.btn__left {
+  border: 2px solid var(--mapfre-red);
+  border-right: none;
+  background: #fff;
+  color: var(--mapfre-red);
+  border-top-left-radius: 9999px;
+  border-bottom-left-radius: 9999px;
+}
+
+.btn__right {
+  background: var(--mapfre-red);
+  color: #fff;
+  border-top-right-radius: 9999px;
+  border-bottom-right-radius: 9999px;
+}
+
+.btn:not(.btn--badge) {
+  background: var(--mapfre-red);
+  color: #fff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 9999px;
+  border: 2px solid var(--mapfre-red);
+}
+
+/* Hover con badge */
+.btn--badge:hover .btn__left {
+  background: #f8f8f8;
+  color: #8E0E14;
+  border-color: #8E0E14;
+}
+
+.btn--badge:hover .btn__right {
+  background: #8E0E14;
+}

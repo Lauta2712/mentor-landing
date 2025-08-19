@@ -1,0 +1,16 @@
+:root{
+  --mapfre-red: #D81E05;   
+  --text: #171717;
+}
+
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: "Montserrat", "Poppins", system-ui, -apple-system, Arial, sans-serif; color: var(--text); }
+
+.landing{
+  background-color: white;
+}
+
+.bg-autos{    background: url("/images/autos-hero.jpg") center/cover no-repeat; }
+.bg-diversos{ background: url("/images/diversos-hero.jpg") center/cover no-repeat; }
+.bg-vida{     background: url("/images/vida-hero.jpg") center/cover no-repeat; }
