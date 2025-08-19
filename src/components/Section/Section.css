@@ -5,41 +5,48 @@
 .section-hero {
   position: relative;
   width: 100%;
-  height: clamp(200px, 30vw, 340px); 
+  height: clamp(12rem, 28vw, 22rem); 
   display: grid;
   align-items: center;
 }
 .section-hero::after {
-  content:"";
-  position:absolute; inset:0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.05) 55%, rgba(0,0,0,0) 100%);
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.05) 55%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .section-body {
   background: #fff;
-  padding: clamp(18px, 4vw, 44px) clamp(12px, 5vw, 64px);
+  padding: clamp(1rem, 4vw, 3rem) clamp(0.75rem, 5vw, 4rem);
+  max-width: 75rem;  
+  margin: 0 auto;
 }
 
 .buttons {
   display: grid;
-  grid-template-columns: repeat(3, minmax(220px, 1fr));
-  gap: clamp(14px, 2vw, 24px) clamp(18px, 3vw, 36px);
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: clamp(0.75rem, 2vw, 1.5rem) clamp(1rem, 3vw, 2.25rem);
   justify-items: center;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 56.25rem) { 
   .buttons {
-    grid-template-columns: repeat(2, minmax(180px, 1fr));
-    gap: 16px 24px;
+    gap: 1rem;
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 40rem) { 
+  .section-body {
+    padding: 1rem;
+  }
   .buttons {
     grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .section-body {
-    padding: 16px; 
+    gap: 0.75rem;
   }
 }

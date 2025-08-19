@@ -1,23 +1,28 @@
 .btn {
   display: inline-flex;
-  align-items: stretch; /* Importante: que ambos hijos se estiren a la misma altura */
+  align-items: stretch; 
   justify-content: center;
   border-radius: 9999px;
   font-weight: 800;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 10px 25px rgba(0,0,0,.15);
+  box-shadow: 0 0.625rem 1.5625rem rgba(0,0,0,.15); 
   transition: transform .15s ease, box-shadow .2s ease, background .2s ease;
-  min-width: 260px;
-  overflow: hidden; /* Para que el borde pill quede limpio */
+  min-width: clamp(8rem, 60%, 16rem); 
+  max-width: 100%;
+  overflow: hidden; 
+}
+
+button, .btn {
+  font-family: "Nunito", sans-serif;
+  font-weight: 800;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0,0,0,.2);
+  transform: translateY(-0.125rem); 
+  box-shadow: 0 0.875rem 1.875rem rgba(0,0,0,.2);
 }
 
-/* Ambos lados ocupan el 50% */
 .btn__left,
 .btn__right {
   flex: 1;
@@ -25,13 +30,13 @@
   align-items: center;
   justify-content: center;
   white-space: nowrap;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
   font-weight: 900;
-  padding: 0.75rem 1rem; /* padding igual para ambos */
+  padding: 0.75rem 1rem; 
 }
 
 .btn__left {
-  border: 2px solid var(--mapfre-red);
+  border: 0.125rem solid var(--mapfre-red);
   border-right: none;
   background: #fff;
   color: var(--mapfre-red);
@@ -49,12 +54,11 @@
 .btn:not(.btn--badge) {
   background: var(--mapfre-red);
   color: #fff;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 9999px;
-  border: 2px solid var(--mapfre-red);
+  border: 0.125rem solid var(--mapfre-red);
 }
 
-/* Hover con badge */
 .btn--badge:hover .btn__left {
   background: #f8f8f8;
   color: #8E0E14;
@@ -63,4 +67,16 @@
 
 .btn--badge:hover .btn__right {
   background: #8E0E14;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    min-width: 100%; 
+    font-size: 0.8rem;
+  }
+
+  .btn__left,
+  .btn__right {
+    padding: 0.65rem 0.75rem; 
+  }
 }
